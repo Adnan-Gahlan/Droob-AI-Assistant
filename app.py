@@ -5,7 +5,6 @@ import re
 
 # ==========================================
 # 1. إعدادات الصفحة
-# ==========================================
 st.set_page_config(page_title="دروب الياسين | المساعد الذكي", page_icon="✈️", layout="wide")
 
 st.markdown("""
@@ -143,4 +142,4 @@ if user_input:
                     message_placeholder.markdown(reply)
                     st.session_state.messages.append({"role": "assistant", "content": reply})
                 except Exception as e:
-                    message_placeholder.error("⚠️ عذراً، هناك مشكلة في الاتصال. يرجى المحاولة لاحقاً.")
+                    message_placeholder.error(f"⚠️ تفاصيل الخطأ البرمجي: {e}")
