@@ -96,7 +96,20 @@ with st.sidebar:
         st.session_state.quick_prompt = "بكم باقات العمرة؟"
     if st.button("🛂 استخراج الجوازات"):
         st.session_state.quick_prompt = "بكم تجديد الجواز المستعجل؟"
-
+st.markdown("---")
+    # تجميع المحادثة في نص واحد للتحميل
+chat_history_text = "تفاصيل استفساراتك من مكتب دروب الياسين:\n\n"
+for msg in st.session_state.messages[1:]: # نتجاوز رسالة الترحيب الأولى
+        role = "العميل" if msg["role"] == "user" else "الموظف الآلي"
+        chat_history_text += f"{role}: {msg['content']}\n"
+        
+st.download_button(
+        label="📥 تحميل تفاصيل المحادثة (إيصال)",
+        data=chat_history_text,
+        file_name="Droob_Booking_Details.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
 # 6. الواجهة الرئيسية للمحادثة
 st.markdown("<p class='main-header'>✈️ المساعد الذكي لخدمة العملاء</p>", unsafe_allow_html=True)
 st.markdown("<p class='sub-header'>خطط لرحلتك القادمة بثقة وسهولة</p>", unsafe_allow_html=True)
