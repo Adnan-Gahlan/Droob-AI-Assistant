@@ -64,7 +64,7 @@ system_instruction = f"""
 
 @st.cache_resource
 def load_ai_model(_instruction):
-    return genai.GenerativeModel(model_name='gemini-1.5-flash', system_instruction=_instruction)
+    return genai.GenerativeModel(model_name='gemini-2.5-flash', system_instruction=_instruction)
 
 model = load_ai_model(system_instruction)
 
