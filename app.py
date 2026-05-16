@@ -108,8 +108,7 @@ st.download_button(
         data=chat_history_text,
         file_name="Droob_Booking_Details.txt",
         mime="text/plain",
-        use_container_width=True
-    )
+        use_container_width=True)
 # 6. الواجهة الرئيسية للمحادثة
 st.markdown("<p class='main-header'>✈️ المساعد الذكي لخدمة العملاء</p>", unsafe_allow_html=True)
 st.markdown("<p class='sub-header'>خطط لرحلتك القادمة بثقة وسهولة</p>", unsafe_allow_html=True)
